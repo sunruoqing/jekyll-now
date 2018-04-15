@@ -4,6 +4,7 @@ title: You're up and running!
 published: true
 ---
 
+<span class="label label-default">Default</span>
 <mark>Marked text</mark>
 <code>Coded text</code>
 
