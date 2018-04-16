@@ -74,19 +74,3 @@ SELECT column1, column2, ...
 FROM table_name
 WHERE columnN LIKE 'a_%_%';
 ```
-
-
-```sql
-
-```
-
-
-
-```sql
-
-```
-
-
-```sql
-
-```
