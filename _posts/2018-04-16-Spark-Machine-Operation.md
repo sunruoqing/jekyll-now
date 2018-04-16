@@ -51,3 +51,24 @@ FROM table_name
 ORDER BY column1, column2, ... ASC|DESC;
 
 ```
+
+Insert
+
+```sql
+
+INSERT INTO table_name (column1, column2, column3, ...)
+VALUES (value1, value2, value3, ...);
+
+```
+
+Update table
+
+```sql
+
+UPDATE Customers
+SET ContactName = 'Alfred Schmidt', City= 'Frankfurt'
+WHERE CustomerID = 1;
+
+```
+
+
