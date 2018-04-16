@@ -1,34 +1,3 @@
-## Operations on Spark
-
-```bash
-ssh lxhnl016
-upyter notebook --ip 0.0.0.0 --port 1915
-pyspark
-
-https://lxhnl016:1915
-```
-
-
-```python
-import findspark
-findspark.init()
-from pyspark.sql import SparkSession
-
-spark = SparkSession.builder \
-        .master('yarn') \
-        .appName("Mandoline") \
-        .config('spark.executor.memory', '10g') \
-        .config('spark.executor.core', '1') \
-        .config('spark.driver.memory', '10g') \
-        .config('spark.yarn.executor.memoryOverhead', '10000') \
-        .config("spark.jars", "/usr/hdp/current/hive-server2-hive2/lib/postgresql-9.4.1208.jre7.jar") \
-        .enableHiveSupport().getOrCreate()
-        
-value_reporter = data_queries.value_reporter(spark, VR_DB, VR, START_DATE, END_DATE)
-grid = data_queries.grid(spark, GRID_DB, GRID)
-
-```
-
 ## SQL cheatsheet
 
 Select
@@ -70,5 +39,54 @@ SET ContactName = 'Alfred Schmidt', City= 'Frankfurt'
 WHERE CustomerID = 1;
 
 ```
+Delete Table
+
+```sql
+DELETE FROM Customers
+WHERE CustomerName='Alfreds Futterkiste';
+```
+
+Select Top
+
+```sql
+SELECT * FROM Customers
+WHERE Country='Germany'
+LIMIT 3;
+
+SELECT column_name(s)
+FROM table_name
+WHERE ROWNUM <= number;
+
+SELECT TOP number|percent column_name(s)
+FROM table_name
+WHERE condition;
+```
+
+Min and Max
+```sql
+SELECT MIN(Price) AS SmallestPrice
+FROM Products;
+```
+
+Like
+```sql
+SELECT column1, column2, ...
+FROM table_name
+WHERE columnN LIKE 'a_%_%';
+```
 
 
+```sql
+
+```
+
+
+
+```sql
+
+```
+
+
+```sql
+
+```
