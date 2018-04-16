@@ -1,3 +1,5 @@
+## Operations on Spark
+
 ```bash
 ssh lxhnl016
 upyter notebook --ip 0.0.0.0 --port 1915
@@ -24,5 +26,28 @@ spark = SparkSession.builder \
         
 value_reporter = data_queries.value_reporter(spark, VR_DB, VR, START_DATE, END_DATE)
 grid = data_queries.grid(spark, GRID_DB, GRID)
+
+```
+
+## SQL cheatsheet
+
+Select
+
+```sql
+
+SELECT COUNT(DISTINCT Country) FROM Customers;
+
+SELECT Count(*) AS DistinctCountries
+FROM (SELECT DISTINCT Country FROM Customers);
+
+```
+
+OrderBy
+
+```sql
+
+SELECT column1, column2, ...
+FROM table_name
+ORDER BY column1, column2, ... ASC|DESC;
 
 ```
