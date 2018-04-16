@@ -1,5 +1,4 @@
-```Bash
-
+```bash
 ssh lxhnl016
 upyter notebook --ip 0.0.0.0 --port 1915
 pyspark
@@ -8,7 +7,7 @@ https://lxhnl016:1915
 ```
 
 
-```Python
+```python
 import findspark
 findspark.init()
 from pyspark.sql import SparkSession
